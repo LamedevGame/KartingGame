@@ -114,6 +114,18 @@ A GPU-driven minimap system with zero per-dot draw calls.
 - Per-actor colors via the `IMapDotColorInterface` — each actor can return its own color (e.g. team color from PlayerState).
 - The material supports custom icons instead of circles by sampling a texture at local UV coordinates relative to each dot.
 
+### Speed Widget (Material Shader)
+
+A radial speedometer built entirely in the UE material editor — no Blueprint tick needed for the visual fill.
+
+**How it works:**
+- Three textures compose the gauge: `T_SpeedWidget_Empty` (background), `T_SpeedWidget_Full` (filled arc), and `T_SpeedWidget_Arrow` (needle).
+- A scalar parameter `Progress` (0–1) drives everything. It is remapped to the angular range 0.11–0.7 via `RemapValueRange` to match the gauge arc.
+- **Radial fill:** UVs are converted to polar coordinates (`atan2` of centered UVs, divided by 2π, offset and wrapped with `frac`). A `Step` node compares the pixel's angle against `ProgressClamped`, producing a hard mask that blends the Full texture over the Empty texture.
+- **Needle rotation:** The arrow texture UVs are rotated with a standard 2D rotation matrix (`X' = X·cos − Y·sin`, `Y' = X·sin + Y·cos`). The rotation angle is derived from `ProgressClamped`, so the needle tracks the fill.
+- **Color gradient:** The needle color lerps from green `(0,1,0)` to red `(1,0,0)` based on `Progress` — low speed is green, high speed is red. The tinted color is masked by the arrow texture and added to the base gauge on the Final Color output.
+- **Opacity:** The empty texture's alpha channel combined with the arrow mask, scaled by 0.3, feeds the Opacity Override — keeping the gauge semi-transparent over the HUD.
+
 ### Spline Tool
 
 `ASplineTool` is an editor and runtime tool for building track geometry along a spline.
