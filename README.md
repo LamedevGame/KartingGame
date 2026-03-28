@@ -2,7 +2,7 @@
 
 Multiplayer kart racing game built with Unreal Engine 5 and the Chaos Vehicle system.
 
-https://www.youtube.com/watch?v=bk4r0aSvFvA
+[![Gameplay  Video](https://img.youtube.com/vi/bk4r0aSvFvA/maxresdefault.jpg)](https://www.youtube.com/watch?v=bk4r0aSvFvA)
 
 ## Tech Stack
 
