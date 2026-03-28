@@ -87,10 +87,13 @@ Built on `AWheeledVehiclePawn` with `UChaosWheeledVehicleMovementComponent`.
 - Toggle between cameras via `InputToggleCamera`. Camera state resets on switch.
 
 **Driver head rotation** — in first-person mode, the head rotation is sent to the server (`ServerUpdateHeadRotation`, Unreliable) and replicated to all clients, so other players see the driver looking around.
+<img width="800" height="437" alt="image" src="https://github.com/user-attachments/assets/ee69560e-95d0-400d-a458-5dad276a5557" />
+
 
 **Body offset** — a filtered acceleration vector (`BodyOffset`) is computed each tick from longitudinal and centrifugal acceleration. This is exposed to Blueprint for procedural body lean animations (the driver leans into turns and brakes).
 
 **Nickname widget** — a world-space `UUserWidget` is created in `BeginPlay` and positioned each tick at `NicknamePoint`. It scales inversely with camera distance (configurable reference distance, min/max scale) and hides when off-screen. Cleaned up in `EndPlay`.
+<img width="1231" height="796" alt="image" src="https://github.com/user-attachments/assets/212a4581-00b1-4345-b81f-254561cb9299" />
 
 ### Minimap (MapLibrary)
 
