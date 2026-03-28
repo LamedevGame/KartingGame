@@ -2,6 +2,17 @@
 
 Multiplayer kart racing game built with Unreal Engine 5 and the Chaos Vehicle system.
 
+## Tech Stack
+
+| | |
+|---|---|
+| **Engine** | Unreal Engine 5.7 (C++) |
+| **Vehicle Physics** | Chaos Vehicles (`UChaosWheeledVehicleMovementComponent`) |
+| **Input** | Enhanced Input System |
+| **Networking** | UE Replication, Steam Sockets |
+| **Online** | OnlineSubsystemSteam, AdvancedSessions, AdvancedSteamSessions |
+| **Rendering** | Custom material shaders (radial fill, GPU-driven minimap) |
+
 ## Architecture
 
 The project follows a clean interface-driven design. Two core interfaces decouple gameplay systems:
