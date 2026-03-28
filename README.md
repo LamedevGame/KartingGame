@@ -26,6 +26,12 @@ All race state lives in `ARacingGameState` and replicates automatically.
 
 The GameMode only runs on the server. It assigns spawn points, distributes colors, and initiates countdowns. The PlayerController handles client-side UI and forwards input to the pawn through the input interface.
 
+## Steam Integration
+
+Multiplayer runs on top of Steam via `OnlineSubsystemSteam`, `SteamSockets`, and the third-party `AdvancedSessions` / `AdvancedSteamSessions` plugins. Session creation, search, and join go through the Steam backend — no dedicated server or manual IP entry required.
+
+Player identity is pulled directly from the Steam account: the player's **Steam nickname** is used as the in-game display name, and their **Steam avatar** is fetched and shown in the UI. This keeps the lobby and race HUD consistent with what players see in their Steam friends list.
+
 ## Game Flow
 
 1. **Lobby** — Players connect. `PostLogin` assigns each player a random color from the available pool and notifies all clients via `OnPlayerConnected`.
