@@ -139,6 +139,8 @@ A radial speedometer built entirely in the UE material editor — no Blueprint t
 
 `ASplineTool` is an editor and runtime tool for building track geometry along a spline.
 
+![SplineTool](Docs/SplineTool.gif)
+
 **Deformable mesh mode:**
 - Divides the spline into segments of configurable length (`SegmentLength`).
 - Creates a `USplineMeshComponent` per segment, with tangents clamped to segment length for smooth bends.
