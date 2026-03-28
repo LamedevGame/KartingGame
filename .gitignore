@@ -1,0 +1,21 @@
+# Unreal Engine generated
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Content (large assets)
+Content/
+
+# Third-party plugins
+Plugins/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# OS files
+Thumbs.db
+.DS_Store
