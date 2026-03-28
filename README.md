@@ -94,6 +94,7 @@ Built on `AWheeledVehiclePawn` with `UChaosWheeledVehicleMovementComponent`.
 ![Gameplay](Docs/HeadRotation.gif)
 
 **Body offset** — a filtered acceleration vector (`BodyOffset`) is computed each tick from longitudinal and centrifugal acceleration. This is exposed to Blueprint for procedural body lean animations (the driver leans into turns and brakes).
+![Gameplay](Docs/BodyRotation.gif)
 
 **Nickname widget** — a world-space `UUserWidget` is created in `BeginPlay` and positioned each tick at `NicknamePoint`. It scales inversely with camera distance (configurable reference distance, min/max scale) and hides when off-screen. Cleaned up in `EndPlay`.
 <img width="2559" height="1383" alt="image" src="https://github.com/user-attachments/assets/04551823-32ac-4c2e-9af4-e03b1cdfee4f" />
