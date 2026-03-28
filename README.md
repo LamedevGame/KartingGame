@@ -99,6 +99,7 @@ Built on `AWheeledVehiclePawn` with `UChaosWheeledVehicleMovementComponent`.
 ### Minimap (MapLibrary)
 
 A GPU-driven minimap system with zero per-dot draw calls.
+<img width="422" height="365" alt="image" src="https://github.com/user-attachments/assets/e48b2508-72e1-484f-b92b-7b9a8476d631" />
 
 **How it works:**
 1. `CreateMapTexture` creates a 64x2 transient `PF_B8G8R8A8` texture (nearest filtering, no sRGB, no compression).
@@ -106,6 +107,9 @@ A GPU-driven minimap system with zero per-dot draw calls.
    - **Row 0** — position data: R = normalized X, G = normalized Y, B = active flag (255), A = unused.
    - **Row 1** — per-actor color: RGB from `IMapDotColorInterface::GetMapDotColor()` if implemented, otherwise the provided default color.
 3. A custom HLSL node in the material loops over all 64 pixels, samples position and color, and draws an icon (or circle) at each active dot's location.
+<img width="1969" height="762" alt="image" src="https://github.com/user-attachments/assets/1791a92c-03bc-4312-854b-c28d0ac5d08a" />
+<img width="1385" height="794" alt="image" src="https://github.com/user-attachments/assets/05cd7586-e279-4d50-8a89-7b6e60078a84" />
+
 
 **Features:**
 - Optional yaw rotation (`bRotateWithYaw`) — the map rotates so the player always faces up.
