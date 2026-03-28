@@ -118,6 +118,8 @@ A GPU-driven minimap system with zero per-dot draw calls.
 
 A radial speedometer built entirely in the UE material editor — no Blueprint tick needed for the visual fill.
 
+<img width="319" height="301" alt="image" src="https://github.com/user-attachments/assets/78c9aa07-45c8-4944-aaa9-0ecd3dd1a281" />
+
 **How it works:**
 - Three textures compose the gauge: `T_SpeedWidget_Empty` (background), `T_SpeedWidget_Full` (filled arc), and `T_SpeedWidget_Arrow` (needle).
 - A scalar parameter `Progress` (0–1) drives everything. It is remapped to the angular range 0.11–0.7 via `RemapValueRange` to match the gauge arc.
@@ -125,6 +127,7 @@ A radial speedometer built entirely in the UE material editor — no Blueprint t
 - **Needle rotation:** The arrow texture UVs are rotated with a standard 2D rotation matrix (`X' = X·cos − Y·sin`, `Y' = X·sin + Y·cos`). The rotation angle is derived from `ProgressClamped`, so the needle tracks the fill.
 - **Color gradient:** The needle color lerps from green `(0,1,0)` to red `(1,0,0)` based on `Progress` — low speed is green, high speed is red. The tinted color is masked by the arrow texture and added to the base gauge on the Final Color output.
 - **Opacity:** The empty texture's alpha channel combined with the arrow mask, scaled by 0.3, feeds the Opacity Override — keeping the gauge semi-transparent over the HUD.
+<img width="1220" height="1038" alt="image" src="https://github.com/user-attachments/assets/7513a7a2-5a62-4dbd-8c5a-1b597b36c9d6" />
 
 ### Spline Tool
 
