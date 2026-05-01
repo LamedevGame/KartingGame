@@ -1,4 +1,4 @@
-# RacingGame
+# KartingGame
 
 Multiplayer kart racing game built with Unreal Engine 5 and the Chaos Vehicle system.
 
